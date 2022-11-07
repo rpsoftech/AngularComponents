@@ -1,1 +1,1 @@
-export * from './lib/nav-bars/nav-bars.component';
+export * from './lib/nav-bar1/nav-bar1.component';
