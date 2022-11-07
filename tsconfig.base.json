@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rps/angular-nav-bars": ["packages/nav-bars/src/index.ts"]
+      "@rps/angular-nav-bars": ["packages/nav-bars/src/index.ts"],
+      "@rps/angular-nav-bars/nav-1": [
+        "packages/nav-bars/src/lib/nav-bars/nav-bars.component.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

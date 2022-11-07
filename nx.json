@@ -36,5 +36,6 @@
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
-  }
+  },
+  "defaultProject": "component-testing-bed"
 }

@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "component-testing-bed": "packages/component-testing-bed",
     "nav-bars": "packages/nav-bars"
   }
 }
