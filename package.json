@@ -2,9 +2,7 @@
   "name": "rps-angular-components",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nrwl/cli": "14.7.8",
     "@nrwl/nx-cloud": "latest",
