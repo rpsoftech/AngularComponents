@@ -1,0 +1,5 @@
+{
+  "lib": {
+    "entryFile": "src/nav-bar2/nav-bar2.component.ts"
+  }
+}

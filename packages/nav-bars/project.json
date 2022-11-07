@@ -34,7 +34,9 @@
       "options": {
         "lintFilePatterns": [
           "packages/nav-bars/**/*.ts",
-          "packages/nav-bars/**/*.html"
+          "packages/nav-bars/**/*.html",
+          "packages/nav-bars/nav-bar2/**/*.ts",
+          "packages/nav-bars/nav-bar2/**/*.html"
         ]
       }
     }

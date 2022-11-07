@@ -16,8 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@rps/angular-nav-bars": ["packages/nav-bars/src/index.ts"],
+      "@rps/angular-nav-bars/nav-2": [
+        "packages/nav-bars/NavBar2/src/nav-bar2/nav-bar2.component.ts"
+      ],
       "@rps/angular-nav-bars/nav-1": [
-        "packages/nav-bars/src/lib/nav-bars/nav-bars.component.ts"
+        "packages/nav-bars/src/lib/nav-bar1/nav-bar1.component.ts"
       ]
     }
   },
