@@ -39,9 +39,10 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-      - run: yarn install
+        run: yarn install
 
-      - run: yarn nx affected --target=${TARGET} --base=origin/main
+      - name: Yarn Affected ${TARGET}
+        run: yarn nx affected --target=${TARGET} --base=origin/main
         env:
           TARGET: ${{ matrix.target }}
 
@@ -71,9 +72,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-      - run: yarn install
+        run: yarn install
 
       - name: Yarn Affected ${TARGET}
-      - run: yarn nx affected --target=${TARGET} --base=origin/main 
+        run: yarn nx affected --target=${TARGET} --base=origin/main 
         env:
           TARGET: ${{ matrix.target }}
