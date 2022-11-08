@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'nav-bars-1',
+  selector: 'nav-bars-2',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './nav-bar2.component.html',
