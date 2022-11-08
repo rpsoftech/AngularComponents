@@ -11,4 +11,26 @@ import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';
 })
 export class AppComponent {
   title = 'component-testing-bed';
+  svgs = [
+    {
+      img: '../assets/svg/home-outline.svg',
+      url: 'Github',
+      uid: '',
+    },
+    {
+      img: '../assets/svg/home-outline.svg',
+      url: 'Github',
+      uid: '',
+    },
+    {
+      img: '../assets/svg/home-outline.svg',
+      url: 'Github',
+      uid: '',
+    },
+    {
+      img: '../assets/svg/home-outline.svg',
+      url: 'Github',
+      uid: '',
+    },
+  ];
 }
