@@ -11,26 +11,34 @@ import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';
 })
 export class AppComponent {
   title = 'component-testing-bed';
+
+  image = '../assets/svg/home-outline.svg';
+
   svgs = [
     {
       img: '../assets/svg/home-outline.svg',
       url: 'Github',
-      uid: '',
+      uid: '1',
     },
     {
       img: '../assets/svg/home-outline.svg',
       url: 'Github',
-      uid: '',
+      uid: '2',
     },
     {
       img: '../assets/svg/home-outline.svg',
       url: 'Github',
-      uid: '',
+      uid: '3',
     },
     {
       img: '../assets/svg/home-outline.svg',
       url: 'Github',
-      uid: '',
+      uid: '4',
+    },
+    {
+      img: '../assets/svg/home-outline.svg',
+      url: 'Github',
+      uid: '5',
     },
   ];
 }

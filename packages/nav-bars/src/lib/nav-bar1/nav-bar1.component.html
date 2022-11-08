@@ -1,11 +1,19 @@
 <section class="navigation">
   <ul>
-    <li *ngFor="let data of svg">
+    <!-- <li class="active">
       <a>
+        <div class="icon">
+          <img [src]="img" alt="img" />
+        </div>
+      </a>
+    </li> -->
+    <li *ngFor="let data of svg" [class.active]="data.uid === index">
+      <a (click)="change(data.uid)">
         <div class="icon">
           <img [src]="data.img" alt="img" />
         </div>
       </a>
     </li>
+    <div class="indicator"></div>
   </ul>
 </section>
