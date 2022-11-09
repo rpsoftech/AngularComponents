@@ -1,5 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+interface navbar1 {
+  img: string;
+  url: string;
+  uid: string;
+}
 
 @Component({
   selector: 'nav-bars-2',
@@ -10,4 +16,11 @@ import { CommonModule } from '@angular/common';
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NavBar2Component {
+  index = '1';
+  @Input() svg: navbar1[] = [];
+  change(id: any) {
+    // console.log(id);
+    this.index = id;
+    console.log(this.index);
+  }
 }

@@ -1,19 +1,17 @@
-<section class="navigation">
+<div class="navigation">
   <ul>
-    <!-- <li class="active">
-      <a>
-        <div class="icon">
-          <img [src]="img" alt="img" />
-        </div>
-      </a>
-    </li> -->
-    <li *ngFor="let data of svg" [class.active]="data.uid === index">
-      <a (click)="change(data.uid)">
-        <div class="icon">
-          <img [src]="data.img" alt="img" />
-        </div>
+    <li
+      class="list active"
+      *ngFor="let data of svg"
+      [class.active]="data.uid === index"
+    >
+      <a href="#" (click)="change(data.uid)">
+        <span class="icon">
+          <img [src]="data.img" alt="Icon" />
+        </span>
       </a>
     </li>
+
     <div class="indicator"></div>
   </ul>
-</section>
+</div>
