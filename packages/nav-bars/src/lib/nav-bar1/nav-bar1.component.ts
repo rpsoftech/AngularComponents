@@ -1,11 +1,12 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
-interface navbar1 {
+export interface navbar1 {
   img: string;
   url: string;
   uid: string;
+  color?: string;
+  'mask-color'?: string;
 }
 
 @Component({

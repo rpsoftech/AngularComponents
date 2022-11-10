@@ -16,11 +16,5 @@ interface navbar1 {
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NavBar2Component {
-  index = '1';
   @Input() svg: navbar1[] = [];
-  change(id: any) {
-    // console.log(id);
-    this.index = id;
-    console.log(this.index);
-  }
 }
