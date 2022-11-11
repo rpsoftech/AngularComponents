@@ -1,1 +1,14 @@
-<p>nav-bars works!</p>
+<div
+  class="menu"
+  [class.active]="active === true"
+  [ngStyle]="{ '--num-of-image': svg.length }"
+>
+  <div class="toggle" (click)="active = !active">
+    <img [src]="menuImg" alt="img" />
+  </div>
+  <li [ngStyle]="{ '--i': i }" *ngFor="let data of svg; let i = index">
+    <a>
+      <img [src]="data.img" alt="Icon" />
+    </a>
+  </li>
+</div>
