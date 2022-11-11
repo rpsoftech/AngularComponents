@@ -17,27 +17,22 @@ export class AppComponent {
   svgs = [
     {
       img: '../assets/svg/home-outline.svg',
-      url: 'Github',
       uid: '1',
     },
     {
       img: '../assets/svg/home-outline.svg',
-      url: 'Github',
       uid: '2',
     },
     {
       img: '../assets/svg/home-outline.svg',
-      url: 'Github',
       uid: '3',
     },
     {
       img: '../assets/svg/home-outline.svg',
-      url: 'Github',
       uid: '4',
     },
     {
       img: '../assets/svg/home-outline.svg',
-      url: 'Github',
       uid: '5',
     },
   ];

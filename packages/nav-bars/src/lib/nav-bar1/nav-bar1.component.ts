@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 export interface navbar1 {
   img: string;
-  url: string;
   uid: string;
   color?: string;
   'mask-color'?: string;
