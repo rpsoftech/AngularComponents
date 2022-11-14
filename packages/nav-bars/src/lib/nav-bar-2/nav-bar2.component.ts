@@ -1,5 +1,6 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Output, ViewEncapsulation } from '@angular/core';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { EventEmitter } from 'stream';
 
 interface navbar1 {
   img: string;
@@ -18,10 +19,8 @@ export class NavBar2Component {
   @Input() svg: navbar1[] = [];
   active = false;
   @Input() menuImg = '';
-
-  // change(id: any) {
-  //   // console.log(id);
-  //   this.index = id;
-  //   console.log(this.index);
-  // }
+  @Output() ChangedIndex = new EventEmitter();
+  change(id: string) {
+    this.ChangedIndex.emit(id);
+  }
 }
