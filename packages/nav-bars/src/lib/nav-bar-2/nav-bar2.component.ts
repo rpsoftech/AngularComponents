@@ -19,9 +19,4 @@ export class NavBar2Component {
   active = false;
   @Input() menuImg = '';
 
-  // change(id: any) {
-  //   // console.log(id);
-  //   this.index = id;
-  //   console.log(this.index);
-  // }
 }

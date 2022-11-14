@@ -1,4 +1,10 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface navbar1 {
@@ -16,19 +22,13 @@ export interface navbar1 {
   styleUrls: ['./nav-bar1.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class NavBar1Component implements OnInit {
+export class NavBar1Component {
   index = '1';
   @Input() svg: navbar1[] = [];
   @Input() img = '';
-
-  ngOnInit(): void {
-    //
-    console.log();
-  }
-
-  change(id: any) {
-    // console.log(id);
+  @Output() ChangedIndex = new EventEmitter();
+  change(id: string) {
     this.index = id;
-    console.log(this.index);
+    this.ChangedIndex.emit(id);
   }
 }
