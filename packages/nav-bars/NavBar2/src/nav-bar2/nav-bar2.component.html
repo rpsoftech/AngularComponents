@@ -1,13 +1,15 @@
-<!-- <section> -->
-<div class="navigation">
-  <ul>
-    <li *ngFor="let data of svg">
-      <a href="#">
-        <span class="icon">
-          <img [src]="data.img" alt="Icon" />
-        </span>
-      </a>
-    </li>
-  </ul>
+<div
+  class="menu"
+  [class.active]="active === true"
+  [ngStyle]="{ '--num-of-image': svg.length }"
+>
+  <div class="toggle" (click)="active = !active">
+    <img [class.hide]="!menuImg" [src]="menuImg" alt="img" />
+    <svg [class.hide]="menuImg" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 112v288M400 256H112"/></svg>
+  </div>
+  <li [ngStyle]="{ '--i': i }" *ngFor="let data of svg; let i = index">
+    <a>
+      <img [src]="data.img" alt="Icon" />
+    </a>
+  </li>
 </div>
-<!-- </section> -->
