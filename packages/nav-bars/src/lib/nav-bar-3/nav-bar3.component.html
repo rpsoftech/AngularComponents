@@ -1,1 +1,13 @@
-<p>nav-bar3 works!</p>
+<div class="navigation" [ngStyle]="{ '--num-of-img': Harsh.length }">
+  <ul>
+    <li *ngFor="let data of Harsh" [class.active]="data.uid === index">
+      <a href="#" (click)="change(data.uid)">
+        <span class="icon">
+          <img [src]="data.img" alt="sdvgdsf" />
+        </span>
+        <span class="text">{{ data.name }}</span>
+      </a>
+    </li>
+    <div class="indicator"></div>
+  </ul>
+</div>

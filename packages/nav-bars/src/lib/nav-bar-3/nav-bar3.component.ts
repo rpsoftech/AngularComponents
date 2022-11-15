@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { Component, Input } from '@angular/core';
+
+interface navbar3 {
+  img: string;
+  name: string;
+  uid: string;
+}
 
 @Component({
-  selector: 'nav-bars-nav-bar3',
+  selector: 'nav-bars-3',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgIf, NgFor, NgStyle],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './nav-bar3.component.html',
   styleUrls: ['./nav-bar3.component.scss'],
 })
 export class NavBar3Component {
+  @Input() Harsh: navbar3[] = [];
+  index = '1';
+  change(id: string) {
+    this.index = id;
+    // this.ChangedIndex.emit(id);
+  }
 }

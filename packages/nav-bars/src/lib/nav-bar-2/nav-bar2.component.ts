@@ -1,6 +1,5 @@
-import { Component, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
-import { EventEmitter } from 'stream';
 
 interface navbar1 {
   img: string;
