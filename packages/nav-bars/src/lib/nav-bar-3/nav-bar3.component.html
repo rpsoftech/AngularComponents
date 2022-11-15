@@ -1,13 +1,28 @@
 <div class="navigation" [ngStyle]="{ '--num-of-img': parentData.length }">
   <ul>
     <li *ngFor="let data of parentData" [class.active]="data.uid === index">
-      <a href="#" (click)="change(data.uid)">
-        <span class="icon">
-          <img [src]="data.img" alt="sdvgdsf" />
+      <a (click)="change(data.uid, data.indicator_color)">
+        <span
+          class="icon"
+          [ngStyle]="{
+            'background-color':
+              data.uid === index
+                ? data.icon.active_color
+                : data.icon.inactive_color,
+            '-webkit-mask': data.icon.url
+          }"
+        >
+          <!-- <img
+            [src]="data.img"
+            alt="sdvgdsf"
+            [ngStyle]="{
+              'background-color': data.color
+            }"
+          /> -->
         </span>
         <span class="text">{{ data.name }}</span>
       </a>
     </li>
-    <div class="indicator"></div>
+    <div class="indicator" [ngStyle]="{ 'background-color': bgColor }"></div>
   </ul>
 </div>
