@@ -16,7 +16,7 @@ interface navbar3 {
   styleUrls: ['./nav-bar3.component.scss'],
 })
 export class NavBar3Component {
-  @Input() Harsh: navbar3[] = [];
+  @Input() parentData: navbar3[] = [];
   index = '1';
   change(id: string) {
     this.index = id;

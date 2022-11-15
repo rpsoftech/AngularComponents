@@ -1,6 +1,6 @@
-<div class="navigation" [ngStyle]="{ '--num-of-img': Harsh.length }">
+<div class="navigation" [ngStyle]="{ '--num-of-img': parentData.length }">
   <ul>
-    <li *ngFor="let data of Harsh" [class.active]="data.uid === index">
+    <li *ngFor="let data of parentData" [class.active]="data.uid === index">
       <a href="#" (click)="change(data.uid)">
         <span class="icon">
           <img [src]="data.img" alt="sdvgdsf" />
