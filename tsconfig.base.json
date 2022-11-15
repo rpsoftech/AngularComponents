@@ -24,6 +24,9 @@
       ],
       "@rps/angular-nav-bars/nav-bar-3": [
         "packages/nav-bars/src/lib/nav-bar-3/nav-bar3.component.ts"
+      ],
+      "@rps/angular-nav-bars/nav-bar-4": [
+        "packages/nav-bars/src/lib/nav-bar-4/nav-bar4.component.ts"
       ]
     }
   },
