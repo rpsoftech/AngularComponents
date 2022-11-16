@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { NavBar1Component } from '@rps/angular-nav-bars/nav-1';
 import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';
 import { NavBar3Component, navbar3 } from '@rps/angular-nav-bars/nav-bar-3';
@@ -98,4 +98,11 @@ export class AppComponent {
     //   uid: '8',
     // },
   ];
+  constructor(zone: NgZone) {
+    setInterval(() => {
+      zone.run(() => {
+        this.svgs.pop();
+      });
+    }, 5000);
+  }
 }

@@ -27,7 +27,6 @@
       list-style: none;
       position: relative;
       width: var(--icon-width);
-      height: var(--icon-width);
       z-index: 2;
       a {
         position: relative;
@@ -98,7 +97,7 @@
   top: -35px;
   width: 70px;
   height: 70px;
-  left: calc(var(--icon-width) / 2 - 12px);
+  left: calc(var(--icon-width) / 2 - 10px);
   border-radius: 50%;
   z-index: 1;
   background-color: var(--bg-color);

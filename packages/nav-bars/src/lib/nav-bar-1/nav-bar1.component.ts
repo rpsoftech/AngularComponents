@@ -1,9 +1,12 @@
 import {
   AfterViewInit,
   Component,
+  DoCheck,
   ElementRef,
   EventEmitter,
   Input,
+  IterableDiffer,
+  IterableDiffers,
   OnInit,
   Output,
   ViewEncapsulation,
@@ -29,14 +32,20 @@ export interface navbar1 {
   styleUrls: ['./nav-bar1.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class NavBar1Component implements OnInit, AfterViewInit {
+export class NavBar1Component implements AfterViewInit,DoCheck {
   index = '1';
   bgColor = '';
+  iterableDiffer!: IterableDiffer<navbar1>;
   @Input() parentData: navbar1[] = [];
   @Input() img = '';
   @Output() ChangedIndex = new EventEmitter();
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef,iterableDiffers: IterableDiffers) {
+    this.iterableDiffer = iterableDiffers
+    .find(this.parentData)
+    .create<navbar1>();
+  }
+  
 
   private resize = () => {
     const Width = this.el.nativeElement.offsetWidth || 0;
@@ -50,14 +59,9 @@ export class NavBar1Component implements OnInit, AfterViewInit {
     );
   };
 
-  ngOnInit(): void {
-    this.parentData.forEach((a) => {
-      if (a.icon.url.startsWith('url') === false) {
-        a.icon.url = `url("${a.icon.url}")`;
-      }
-    });
+  ngDoCheck(): void {
+    this.recalibrateNavBar();
   }
-
   ngAfterViewInit(): void {
     this.resize();
     window.addEventListener('resize', this.resize);
@@ -68,5 +72,18 @@ export class NavBar1Component implements OnInit, AfterViewInit {
     this.bgColor = color;
 
     this.ChangedIndex.emit(id);
+  }
+
+  private recalibrateNavBar() {
+    if (this.iterableDiffer.diff(this.parentData) !== null) {
+      this.parentData.forEach((a) => {
+        if (a.icon.url.startsWith('url') === false) {
+          a.icon.url = `url("${a.icon.url}")`;
+        }
+      });
+      if (this.el.nativeElement) {
+        this.resize();
+      }
+    }
   }
 }
