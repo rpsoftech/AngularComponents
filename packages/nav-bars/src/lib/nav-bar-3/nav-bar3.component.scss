@@ -6,15 +6,15 @@
 
 :host {
   width: 100%;
-  --num-of-img:3;
+  --num-of-img: 3;
   --indicator-border-color: #222722;
-  --menu-text-color:var(--indicator-border-color);
+  --menu-text-color: var(--indicator-border-color);
   --icon-bg: #29fd53;
   --icon-width: 70px;
   // --icon-width: calc(100% / var(--num-of-img));
   --bg-color: white;
-  --default-inactive-icon-color:black;
-  --default-active-icon-color:white;
+  --default-inactive-icon-color: black;
+  --default-active-icon-color: white;
 }
 
 .navigation {
@@ -35,6 +35,7 @@
       width: var(--icon-width);
       height: var(--icon-width);
       z-index: 1;
+      border: 1px solid black;
       a {
         position: relative;
         display: flex;
@@ -46,6 +47,7 @@
         text-align: center;
         font-weight: 500;
         .icon {
+          cursor: pointer;
           position: relative;
           display: flex;
           justify-content: center;
@@ -70,7 +72,7 @@
       &.active {
         a {
           .icon {
-          background-color: var(--default-active-icon-color);
+            background-color: var(--default-active-icon-color);
             transform: translateY(-35px);
           }
           .text {

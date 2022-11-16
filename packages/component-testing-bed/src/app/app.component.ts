@@ -44,6 +44,34 @@ export class AppComponent {
       uid: '3',
       indicator_color: 'red',
     },
+    {
+      icon: {
+        url: '../assets/svg/add-outline.svg',
+        active_color: 'white',
+      },
+      name: 'Home',
+      uid: '4',
+      indicator_color: '#29fd53',
+    },
+    {
+      icon: {
+        url: '../assets/svg/add-outline.svg',
+        active_color: 'white',
+      },
+      name: 'Home',
+      uid: '5',
+      indicator_color: 'blue',
+    },
+    {
+      icon: {
+        url: '../assets/svg/add-outline.svg',
+        inactive_color: 'green',
+        active_color: 'white',
+      },
+      name: 'Home',
+      uid: '6',
+      indicator_color: 'red',
+    },
     // {
     //   img: '../assets/svg/add-outline.svg',
     //   name: 'Home',

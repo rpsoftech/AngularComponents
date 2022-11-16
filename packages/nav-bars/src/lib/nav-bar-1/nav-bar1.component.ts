@@ -1,5 +1,7 @@
 import {
+  AfterViewInit,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   OnInit,
@@ -27,19 +29,38 @@ export interface navbar1 {
   styleUrls: ['./nav-bar1.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class NavBar1Component implements OnInit {
+export class NavBar1Component implements OnInit, AfterViewInit {
   index = '1';
   bgColor = '';
-  @Input() svg: navbar1[] = [];
+  @Input() parentData: navbar1[] = [];
   @Input() img = '';
   @Output() ChangedIndex = new EventEmitter();
 
+  constructor(private el: ElementRef) {}
+
+  private resize = () => {
+    const Width = this.el.nativeElement.offsetWidth || 0;
+    this.el.nativeElement.style.setProperty(
+      '--num-of-img',
+      this.parentData.length
+    );
+    this.el.nativeElement.style.setProperty(
+      '--icon-width',
+      `${(Width - 50) / this.parentData.length}px`
+    );
+  };
+
   ngOnInit(): void {
-    this.svg.forEach((a) => {
+    this.parentData.forEach((a) => {
       if (a.icon.url.startsWith('url') === false) {
         a.icon.url = `url("${a.icon.url}")`;
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.resize();
+    window.addEventListener('resize', this.resize);
   }
 
   change(id: string, color = '') {

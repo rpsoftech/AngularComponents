@@ -2,7 +2,7 @@
   <ul>
     <li
       class="list active"
-      *ngFor="let data of svg"
+      *ngFor="let data of parentData"
       [class.active]="data.uid === index"
     >
       <a (click)="change(data.uid, data.indicator_color)">
@@ -27,7 +27,6 @@
         </span>
       </a>
     </li>
-
     <div class="indicator"></div>
   </ul>
 </div>
