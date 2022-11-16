@@ -5,9 +5,25 @@
       *ngFor="let data of svg"
       [class.active]="data.uid === index"
     >
-      <a href="#" (click)="change(data.uid)">
-        <span class="icon">
-          <img [src]="data.img" alt="Icon" />
+      <a (click)="change(data.uid, data.indicator_color)">
+        <span
+          class="icon_div"
+          [class.active]="data.uid === index"
+          [ngStyle]="{
+            'background-color': data.uid === index ? data.indicator_color : ''
+          }"
+        >
+          <span
+            class="icon"
+            [ngStyle]="{
+              'background-color':
+                data.uid === index
+                  ? data.icon.active_color
+                  : data.icon.inactive_color,
+              '-webkit-mask': data.icon.url
+            }"
+          >
+          </span>
         </span>
       </a>
     </li>

@@ -2,16 +2,21 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface navbar1 {
-  img: string;
+  icon: {
+    url: string;
+    inactive_color?: string;
+    active_color?: string;
+  };
+  name: string;
+  indicator_color?: string;
   uid: string;
-  color?: string;
-  'mask-color'?: string;
 }
 
 @Component({
@@ -22,13 +27,25 @@ export interface navbar1 {
   styleUrls: ['./nav-bar1.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class NavBar1Component {
+export class NavBar1Component implements OnInit {
   index = '1';
+  bgColor = '';
   @Input() svg: navbar1[] = [];
   @Input() img = '';
   @Output() ChangedIndex = new EventEmitter();
-  change(id: string) {
+
+  ngOnInit(): void {
+    this.svg.forEach((a) => {
+      if (a.icon.url.startsWith('url') === false) {
+        a.icon.url = `url("${a.icon.url}")`;
+      }
+    });
+  }
+
+  change(id: string, color = '') {
     this.index = id;
+    this.bgColor = color;
+
     this.ChangedIndex.emit(id);
   }
 }
