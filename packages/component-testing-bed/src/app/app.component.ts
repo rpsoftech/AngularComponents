@@ -101,7 +101,7 @@ export class AppComponent {
   constructor(zone: NgZone) {
     setInterval(() => {
       zone.run(() => {
-        this.svgs.pop();
+        // this.svgs.pop();
       });
     }, 5000);
   }
