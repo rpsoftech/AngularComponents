@@ -1,11 +1,24 @@
-section {
+.section {
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.498);
+  background: #222327;
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
+
+.section2 {
+  position: absolute;
+  background: #222327;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
 .hello {
   --total-width: 500px;
   // --box-width: calc(

@@ -36,7 +36,9 @@
           "packages/nav-bars/**/*.ts",
           "packages/nav-bars/**/*.html",
           "packages/nav-bars/nav-bar2/**/*.ts",
-          "packages/nav-bars/nav-bar2/**/*.html"
+          "packages/nav-bars/nav-bar2/**/*.html",
+          "packages/nav-bars/nav-bar-3/**/*.ts",
+          "packages/nav-bars/nav-bar-3/**/*.html"
         ]
       }
     }
