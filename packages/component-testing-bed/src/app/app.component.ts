@@ -1,6 +1,6 @@
 import { Component, NgZone } from '@angular/core';
-import { NavBar1Component } from '@rps/angular-nav-bars/nav-1';
-import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';
+import { NavBar1Component } from '@rps/angular-nav-bars/nav-bar-1';
+import { NavBar2Component } from '@rps/angular-nav-bars/nav-bar-2';
 import { NavBar3Component } from '@rps/angular-nav-bars/nav-bar-3';
 import { NavBar4Component } from '@rps/angular-nav-bars/nav-bar-4';
 
