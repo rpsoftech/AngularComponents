@@ -1,11 +1,12 @@
 import { Component, NgZone } from '@angular/core';
-import { NavBar1Component } from '@rps/angular-nav-bars/nav-1';
-import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';
-import { NavBar3Component, navbar3 } from '@rps/angular-nav-bars/nav-bar-3';
+import { NavBar1Component } from '@rps/angular-nav-bars/nav-bar-1';
+import { NavBar2Component } from '@rps/angular-nav-bars/nav-bar-2';
+import { NavBar3Component } from '@rps/angular-nav-bars/nav-bar-3';
+import { NavBar4Component } from '@rps/angular-nav-bars/nav-bar-4';
 
 @Component({
   standalone: true,
-  imports: [NavBar1Component, NavBar2Component, NavBar3Component],
+  imports: [NavBar1Component, NavBar2Component, NavBar3Component,NavBar4Component],
   selector: 'rps-angular-components-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -71,6 +72,11 @@ export class AppComponent {
       name: 'Home',
       uid: '6',
       indicator_color: 'red',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '3',
     },
     // {
     //   img: '../assets/svg/add-outline.svg',
