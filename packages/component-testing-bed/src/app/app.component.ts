@@ -6,7 +6,12 @@ import { NavBar4Component } from '@rps/angular-nav-bars/nav-bar-4';
 
 @Component({
   standalone: true,
-  imports: [NavBar1Component, NavBar2Component, NavBar3Component,NavBar4Component],
+  imports: [
+    NavBar1Component,
+    NavBar2Component,
+    NavBar3Component,
+    NavBar4Component,
+  ],
   selector: 'rps-angular-components-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -104,10 +109,42 @@ export class AppComponent {
     //   uid: '8',
     // },
   ];
+  svgsv1 = [
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '3',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '1',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '5',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '6',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '7',
+    },
+    {
+      img: '../assets/svg/add-outline.svg',
+      name: 'Home',
+      uid: '8',
+    },
+  ];
   constructor(zone: NgZone) {
     setInterval(() => {
       zone.run(() => {
-        // this.svgs.pop();
+        this.svgsv1.pop();
       });
     }, 5000);
   }
