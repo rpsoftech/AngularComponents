@@ -17,13 +17,7 @@
 
 .hello {
   --total-width: 500px;
-  --icon-bg-color:#a6a6d7;
-  // --box-width: calc(
-  //   var(--icon-width) * var(--num-of-images)
-  // ); //Total width - 50px/60px;
-  --num-of-images: 5;
+  --icon-bg-color: #a6a6d7;
   --bg-color: white;
-  --icon-width: 70px;
-  // --active-icon-color: #0fc70f;
-  --active-icon-color: red;
+  // --active-icon-color: red;
 }
