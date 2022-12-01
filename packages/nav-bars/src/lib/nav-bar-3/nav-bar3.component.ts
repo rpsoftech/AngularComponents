@@ -8,7 +8,6 @@ import {
   DoCheck,
   IterableDiffers,
   IterableDiffer,
-  ViewChild,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 export interface navbar3 {
@@ -36,6 +35,7 @@ export class NavBar3Component implements AfterViewInit, OnDestroy, DoCheck {
   index = '1';
   subscription!: Subscription;
   iterableDiffer!: IterableDiffer<navbar3>;
+
   private resizeListner = () => {
     const w = this.el.nativeElement.offsetWidth || 0;
     this.el.nativeElement.style.setProperty(
@@ -74,7 +74,6 @@ export class NavBar3Component implements AfterViewInit, OnDestroy, DoCheck {
   }
   ngAfterViewInit(): void {
     this.resizeListner();
-    // document.body.
     window.addEventListener('resize', this.resizeListner);
   }
   change(id: string, color = '') {

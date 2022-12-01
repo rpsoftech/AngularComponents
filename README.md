@@ -6,8 +6,8 @@ Diffrent types of navgation bars design to use with angular application.
 
 | Component Name             | Import component                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Nav Bar 1 | ```import { NavBar1Component } from '@rps/angular-nav-bars/nav-1';``` |
-| Nav Bar 2 | ```import { NavBar2Component } from '@rps/angular-nav-bars/nav-2';```|
+| Nav Bar 1 | ```import { NavBar1Component } from '@rps/angular-nav-bars/nav-bar-1';``` |
+| Nav Bar 2 | ```import { NavBar2Component } from '@rps/angular-nav-bars/nav-bar-2';```|
 
 ## Authors
 

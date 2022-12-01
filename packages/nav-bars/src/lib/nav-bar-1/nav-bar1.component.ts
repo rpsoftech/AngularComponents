@@ -1,3 +1,4 @@
+import { NgFor, NgStyle } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -7,11 +8,9 @@ import {
   Input,
   IterableDiffer,
   IterableDiffers,
-  OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 export interface navbar1 {
   icon: {
@@ -27,12 +26,12 @@ export interface navbar1 {
 @Component({
   selector: 'nav-bars-1',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgStyle, NgFor],
   templateUrl: './nav-bar1.component.html',
   styleUrls: ['./nav-bar1.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class NavBar1Component implements AfterViewInit,DoCheck {
+export class NavBar1Component implements AfterViewInit, DoCheck {
   index = '1';
   bgColor = '';
   iterableDiffer!: IterableDiffer<navbar1>;
@@ -40,12 +39,11 @@ export class NavBar1Component implements AfterViewInit,DoCheck {
   @Input() img = '';
   @Output() ChangedIndex = new EventEmitter();
 
-  constructor(private el: ElementRef,iterableDiffers: IterableDiffers) {
+  constructor(private el: ElementRef, iterableDiffers: IterableDiffers) {
     this.iterableDiffer = iterableDiffers
-    .find(this.parentData)
-    .create<navbar1>();
+      .find(this.parentData)
+      .create<navbar1>();
   }
-  
 
   private resize = () => {
     const Width = this.el.nativeElement.offsetWidth || 0;
