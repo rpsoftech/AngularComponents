@@ -5,14 +5,22 @@
 }
 
 :host {
-  --icon-color: #222327;
+  width: 100%;
+  --num-of-img: 3;
+  --indicator-border-color: #222722;
+  --menu-text-color: var(--indicator-border-color);
+  --icon-bg: #29fd53;
   --icon-width: 70px;
+  // --icon-width: calc(100% / var(--num-of-img));
+  --bg-color: white;
+  --default-inactive-icon-color: black;
+  --default-active-icon-color: white;
 }
 
 .navigation {
   width: calc(var(--num-of-img) * var(--icon-width) + 50px);
   height: 70px;
-  background: white;
+  background: var(--bg-color);
   position: relative;
   display: flex;
   justify-content: center;
@@ -26,8 +34,8 @@
       list-style: none;
       width: var(--icon-width);
       height: var(--icon-width);
-      transition: 0.8s;
       z-index: 1;
+      border: 1px solid black;
       a {
         position: relative;
         display: flex;
@@ -35,28 +43,27 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
+        height: 100%;
         text-align: center;
         font-weight: 500;
         .icon {
+          cursor: pointer;
           position: relative;
-          height: 75px;
           display: flex;
           justify-content: center;
           align-items: center;
           text-align: center;
+          color: var(--indicator-border-color);
+          background-color: var(--default-inactive-icon-color);
           transition: 0.5s;
-          color: var(--icon-color);
-          img {
-            transition: 0.5s;
-            height: 45px;
-            width: 45px;
-          }
+          height: 45px;
+          width: 45px;
         }
         .text {
           position: absolute;
-          color: var(--icon-color);
+          color: var(--menu-text-color);
           font-weight: 500;
-          font-size: 0.75em;
+          font-size: 0.95em;
           letter-spacing: 0.05em;
           transition: 0.5s;
           opacity: 0;
@@ -64,7 +71,8 @@
       }
       &.active {
         a {
-          .icon img {
+          .icon {
+            background-color: var(--default-active-icon-color);
             transform: translateY(-35px);
           }
           .text {
@@ -74,28 +82,28 @@
         }
       }
       &:nth-child(1).active ~ .indicator {
-        transform: translateX(calc(70px * 0));
+        transform: translateX(calc(var(--icon-width) * 0));
       }
       &:nth-child(2).active ~ .indicator {
-        transform: translateX(calc(70px * 1));
+        transform: translateX(calc(var(--icon-width) * 1));
       }
       &:nth-child(3).active ~ .indicator {
-        transform: translateX(calc(70px * 2));
+        transform: translateX(calc(var(--icon-width) * 2));
       }
       &:nth-child(4).active ~ .indicator {
-        transform: translateX(calc(70px * 3));
+        transform: translateX(calc(var(--icon-width) * 3));
       }
       &:nth-child(5).active ~ .indicator {
-        transform: translateX(calc(70px * 4));
+        transform: translateX(calc(var(--icon-width) * 4));
       }
       &:nth-child(6).active ~ .indicator {
-        transform: translateX(calc(70px * 5));
+        transform: translateX(calc(var(--icon-width) * 5));
       }
       &:nth-child(7).active ~ .indicator {
-        transform: translateX(calc(70px * 6));
+        transform: translateX(calc(var(--icon-width) * 6));
       }
       &:nth-child(8).active ~ .indicator {
-        transform: translateX(calc(70px * 7));
+        transform: translateX(calc(var(--icon-width) * 7));
       }
     }
   }
@@ -104,12 +112,13 @@
 .indicator {
   position: absolute;
   top: -50%;
+  left: calc(var(--icon-width) / 2 - 10px);
   width: 70px;
   height: 70px;
-  background: #29fd53;
+  background: var(--icon-bg);
   transition: 0.6s;
   border-radius: 50%;
-  border: 6px solid var(--icon-color);
+  border: 6px solid var(--indicator-border-color);
   &::before {
     content: '';
     position: absolute;
@@ -119,7 +128,7 @@
     height: 20px;
     background: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 1px -10px 0 0 var(--icon-color);
+    box-shadow: 1px -10px 0 0 var(--indicator-border-color);
   }
   &::after {
     content: '';
@@ -130,6 +139,6 @@
     height: 20px;
     background: transparent;
     border-top-left-radius: 20px;
-    box-shadow: -1px -10px 0 0 var(--icon-color);
+    box-shadow: -1px -10px 0 0 var(--indicator-border-color);
   }
 }
