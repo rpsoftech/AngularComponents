@@ -1,11 +1,21 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
 
-interface navbar1 {
-  img: string;
+export interface navbar2 {
+  icon: {
+    url: string;
+    inactive_color?: string;
+    active_color?: string;
+  };
+  indicator_color?: string;
   uid: string;
 }
-
 @Component({
   selector: 'nav-bars-2',
   standalone: true,
@@ -15,11 +25,15 @@ interface navbar1 {
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NavBar2Component {
-  @Input() svg: navbar1[] = [];
+  index!:string;
+  bgcolor = '';
+  @Input() svg: navbar2[] = [];
   active = false;
   @Input() menuImg = '';
   @Output() ChangedIndex = new EventEmitter();
-  change(id: string) {
+  change(id: string, color = '') {
     this.ChangedIndex.emit(id);
+    this.bgcolor = color;
+    this.index = id;
   }
 }
