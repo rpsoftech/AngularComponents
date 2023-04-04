@@ -8,6 +8,9 @@ import {
   DoCheck,
   IterableDiffers,
   IterableDiffer,
+  Output,
+  EventEmitter,
+  OnInit,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 export interface navbar3 {
@@ -29,10 +32,13 @@ export interface navbar3 {
   templateUrl: './nav-bar3.component.html',
   styleUrls: ['./nav-bar3.component.scss'],
 })
-export class NavBar3Component implements AfterViewInit, OnDestroy, DoCheck {
-  bgColor = '#29fd53';
+export class NavBar3Component
+  implements AfterViewInit, OnDestroy, DoCheck, OnInit
+{
+  @Input() indicatorBgColor = '#29fd53';
   @Input() parentData: navbar3[] = [];
-  index = '1';
+  @Input() index = '1';
+  @Output() indexChange = new EventEmitter();
   subscription!: Subscription;
   iterableDiffer!: IterableDiffer<navbar3>;
 
@@ -52,6 +58,10 @@ export class NavBar3Component implements AfterViewInit, OnDestroy, DoCheck {
     this.iterableDiffer = iterableDiffers
       .find(this.parentData)
       .create<navbar3>();
+  }
+  ngOnInit(): void {
+    const found = this.parentData.find(({ uid }) => uid === this.index);
+    this.change(this.index, found?.indicator_color);
   }
   ngDoCheck(): void {
     this.recalibrateNavBar();
@@ -77,7 +87,8 @@ export class NavBar3Component implements AfterViewInit, OnDestroy, DoCheck {
     window.addEventListener('resize', this.resizeListner);
   }
   change(id: string, color = '') {
+    this.indicatorBgColor = color;
     this.index = id;
-    this.bgColor = color;
+    this.indexChange.next(id);
   }
 }
