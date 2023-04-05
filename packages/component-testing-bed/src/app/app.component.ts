@@ -37,7 +37,6 @@ export class AppComponent {
         url: '../assets/svg/home-outline.svg',
         active_color: 'white',
         inactive_color: 'green',
-
       },
       name: 'Home',
       uid: '2',
@@ -58,7 +57,6 @@ export class AppComponent {
         url: '../assets/svg/add-outline.svg',
         active_color: 'white',
         inactive_color: 'green',
-
       },
       name: 'Home',
       uid: '4',
@@ -69,7 +67,6 @@ export class AppComponent {
         url: '../assets/svg/add-outline.svg',
         active_color: 'white',
         inactive_color: 'green',
-
       },
       name: 'Home',
       uid: '5',
@@ -85,36 +82,6 @@ export class AppComponent {
       uid: '6',
       indicator_color: 'red',
     },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '3',
-    // },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '1',
-    // },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '5',
-    // },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '6',
-    // },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '7',
-    // },
-    // {
-    //   img: '../assets/svg/add-outline.svg',
-    //   name: 'Home',
-    //   uid: '8',
-    // },
   ];
   svgsv1 = [
     {
