@@ -1,10 +1,4 @@
 {
-  "extends": "nx/presets/npm.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "rps-angular-components",
-  "affected": {
-    "defaultBase": "master"
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -13,6 +7,12 @@
         "accessToken": "Mzg4MmVmYmEtMmI3My00NzMwLWFiZGYtOGM0Yjk2NzdiNzA5fHJlYWQtd3JpdGU="
       }
     }
+  },
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "rps-angular-components",
+  "affected": {
+    "defaultBase": "master"
   },
   "generators": {
     "@nrwl/angular:application": {

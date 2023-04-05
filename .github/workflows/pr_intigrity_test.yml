@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Yarn Affected ${TARGET}
+      - name: Yarn Affected ${{ matrix.target }}
         run: yarn nx affected --target=${TARGET} --base=origin/main
         env:
           TARGET: ${{ matrix.target }}
@@ -52,7 +52,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         target:
           - build
           - pack
@@ -74,7 +74,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Yarn Affected ${TARGET}
+      - name: Yarn Affected ${{ matrix.target }}
         run: yarn nx affected --target=${TARGET} --base=origin/main 
         env:
           TARGET: ${{ matrix.target }}
