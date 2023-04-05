@@ -32,13 +32,11 @@ export interface navbar1 {
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NavBar1Component implements AfterViewInit, DoCheck {
-  index = '1';
+  @Input() index = '1';
+  @Output() indexChanged = new EventEmitter();
   bgColor = '';
   iterableDiffer!: IterableDiffer<navbar1>;
   @Input() parentData: navbar1[] = [];
-  @Input() img = '';
-  @Output() ChangedIndex = new EventEmitter();
-
   constructor(private el: ElementRef, iterableDiffers: IterableDiffers) {
     this.iterableDiffer = iterableDiffers
       .find(this.parentData)
@@ -68,8 +66,7 @@ export class NavBar1Component implements AfterViewInit, DoCheck {
   change(id: string, color = '') {
     this.index = id;
     this.bgColor = color;
-
-    this.ChangedIndex.emit(id);
+    this.indexChanged.emit(id);
   }
 
   private recalibrateNavBar() {
