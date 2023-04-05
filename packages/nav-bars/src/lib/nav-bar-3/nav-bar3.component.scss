@@ -6,6 +6,7 @@
 
 :host {
   width: 100%;
+  --menu-border-radius: 10px;
   --num-of-img: 3;
   --indicator-border-color: #222722;
   --menu-text-color: var(--indicator-border-color);
@@ -15,6 +16,8 @@
   --bg-color: white;
   --default-inactive-icon-color: black;
   --default-active-icon-color: white;
+  --icon-heigh-width: 35px;
+  --tans-ball: 0.8s;
 }
 
 .navigation {
@@ -25,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--menu-border-radius);
   ul {
     display: flex;
     width: calc(var(--num-of-img) * var(--icon-width));
@@ -51,12 +54,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          background-repeat: no-repeat;
           text-align: center;
           color: var(--indicator-border-color);
           background-color: var(--default-inactive-icon-color);
-          transition: 0.5s;
-          height: 45px;
-          width: 45px;
+          transition: var(--tans-ball);
+          height: var(--icon-heigh-width);
+          width: var(--icon-heigh-width);
         }
         .text {
           position: absolute;
@@ -70,7 +74,11 @@
       }
       &.active {
         a {
+          transition: var(--tans-ball);
           .icon {
+            mask-repeat: no-repeat;
+            mask-position: center;
+            // background-repeat: no-repeat;
             background-color: var(--default-active-icon-color);
             transform: translateY(-35px);
           }
@@ -115,7 +123,7 @@
   width: 70px;
   height: 70px;
   background: var(--icon-bg);
-  transition: 0.6s;
+  transition: var(--tans-ball);
   border-radius: 50%;
   border: 6px solid var(--indicator-border-color);
   &::before {
