@@ -1,0 +1,49 @@
+<div
+  class="menu"
+  [class.active]="active === true"
+  [ngStyle]="{ '--num-of-image': svg.length }"
+>
+  <div class="toggle" (click)="active = !active">
+    <img [class.hide]="!menuImg" [src]="menuImg" alt="img" />
+    <svg
+      [class.hide]="menuImg"
+      xmlns="http://www.w3.org/2000/svg"
+      class="ionicon"
+      viewBox="0 0 512 512"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="32"
+        d="M256 112v288M400 256H112"
+      />
+    </svg>
+  </div>
+  <li [ngStyle]="{ '--i': i }" *ngFor="let data of svg; let i = index">
+    <a
+      (click)="change(data.uid, data.indicator_color)"
+      >
+      <span
+      [class.active]="data.uid === index"
+        class="icon_div"
+        [ngStyle]="{
+          'background-color': data.uid === index ? data.indicator_color : ''
+        }"
+      >
+        <span
+          class="icon"
+          [ngStyle]="{
+            'background-color':
+              data.uid === index
+                ? data.icon.active_color
+                : data.icon.inactive_color,
+            '-webkit-mask': data.icon.url
+          }"
+        >
+        </span>
+      </span>
+    </a>
+  </li>
+</div>

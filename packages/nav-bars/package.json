@@ -1,0 +1,27 @@
+{
+  "name": "@rps/angular-nav-bars",
+  "version": "1.0.3",
+  "homepage": "https://github.com/rpsoftech/AngularComponents/tree/main/packages/nav-bars#readme",
+  "bugs": {
+    "url": "https://github.com/rpsoftech/AngularComponents/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "author": {
+    "name": "Keyur Shah",
+    "email": "keyurshah3939@gmail.com",
+    "url": "https://www.linkedin.com/in/keyurshah3939/"
+  },
+  "repository": {},
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

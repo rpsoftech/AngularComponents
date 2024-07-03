@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rps/angular-nav-bars": ["packages/nav-bars/src/index.ts"],
+      "@rps/angular-nav-bars/nav-bar-1": [
+        "packages/nav-bars/src/lib/nav-bar-1/nav-bar1.component.ts"
+      ],
+      "@rps/angular-nav-bars/nav-bar-2": [
+        "packages/nav-bars/src/lib/nav-bar-2/nav-bar2.component.ts"
+      ],
+      "@rps/angular-nav-bars/nav-bar-3": [
+        "packages/nav-bars/src/lib/nav-bar-3/nav-bar3.component.ts"
+      ],
+      "@rps/angular-nav-bars/nav-bar-4": [
+        "packages/nav-bars/src/lib/nav-bar-4/nav-bar4.component.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
